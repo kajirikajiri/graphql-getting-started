@@ -1,0 +1,13 @@
+{
+  "name": "graphql-getting-started",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/kajirikajiri/graphql-getting-started.git",
+  "author": "kazukinakamuraKN <kajirikajiri@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.1"
+  }
+}
