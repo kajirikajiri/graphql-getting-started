@@ -1,4 +1,6 @@
-var { graphql, buildSchema}=require('graphql')
+var express = require('express')
+var {buildSchema} = require('graphql')
+var {graphqlHTTP}=require('express-graphql')
 
 var schema = buildSchema(`
   type Query{
@@ -12,6 +14,11 @@ var root={
   }
 }
 
-graphql(schema, `{hello}`, root).then((res)=>{
-  console.log(res)
-})
+var app=express()
+app.use('/graphql',graphqlHTTP({
+  schema,
+  rootValue: root,
+  graphiql: true
+}))
+app.listen(4000)
+console.log('running')
